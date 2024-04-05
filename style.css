@@ -30,6 +30,7 @@ body {
     flex-direction: column;
     align-items: center;
     gap: 28px;
+    box-shadow: 3px 5px 11px 5px rgba(0, 0, 0, 0.34);
 }
 
 .mobile__form{
@@ -40,6 +41,7 @@ body {
 form > div {
     display: flex;
 }
+
 
 .mobile__form__submit{
     width: 35px;
@@ -64,6 +66,14 @@ input {
 
 textarea:focus, input:focus{
     outline: none;
+}
+
+.mobile__picture {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 200px;
+    height: 200px;
 }
 
 .mobile__weather {
