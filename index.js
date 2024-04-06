@@ -5,24 +5,25 @@ const country = document.querySelector('.mobile__location-country');
 const form = document.querySelector('form');
 const type = document.querySelector('.mobile__weather-type');
 const picture = document.querySelector('.mobile__picture');
-const img = document.querySelector('img');
-
-// const seachTown = input.value;
+const error = document.querySelector('.error');
 
 async function getWeather(param) {
-    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=fbdeb1a928fa4975a25193301242903&q=${input.value}`, {mode: 'cors'});
+    const response = await fetch(`http://api.weatherapi.com/v1/current.json?key=fbdeb1a928fa4975a25193301242903&q=${param}`, {mode: 'cors'});
     const data = await response.json();
-    console.log(data);
-    type.textContent = `${data.current.condition.text}`
+    type.textContent = `${data.current.condition.text}`;
     degrees.textContent = `${data.current['temp_c']}°C`
-    town.textContent = `${data.location.name}`
-    country.textContent = `${data.location.country}`
-    picture.src = `${data.current.condition.icon}`
+    town.textContent = `${data.location.name}`;
+    country.textContent = `${data.location.country}`;
+    picture.src = `${data.current.condition.icon}`;
 }
+
+getWeather('Minsk');
 
 form.addEventListener('submit', (e) => {
     e.preventDefault();
-    getWeather()
+    const dataForm = new FormData(form);
+    const obj = Object.fromEntries(dataForm.entries());
+    const place = obj.town;
+    getWeather(place);
 })
-
 

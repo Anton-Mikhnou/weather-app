@@ -110,9 +110,12 @@ textarea:focus, input:focus{
 }
 
 .mobile__location-country{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     font-family: var(---font-degrees);
     font-weight: 700;
-    font-size: 25px;
+    font-size: 20px;
     color: var(--text-color);
 }
 
