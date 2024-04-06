@@ -35,7 +35,10 @@ body {
 
 .mobile__form{
     width: 250px;
-    height: 30px;
+    /* height: 30px; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 form > div {
@@ -124,4 +127,10 @@ textarea:focus, input:focus{
     font-weight: 700;
     font-size: 25px;
     color: var(--text-color);
+}
+
+.active {
+    background-color: red;
+    padding: 2px;
+    border-radius: 50px;
 }
